@@ -101,6 +101,13 @@ primary_widgets = [
 
     powerline('color5', 'color1'),
 
+    # widget.Pomodoro(
+    #     background=colors['color5'],
+    #     foreground=colors['light'],
+    #     color_inactive='#151617',
+    #     color_active='#df0000',
+    #     ),
+    #widget.Clipboard(),
     widget.Systray(background=colors['color5'], padding=2),
     widget.Battery(background=colors['color5'], format='{percent:2.0%}'),
     icon(bg="color5", fontsize=17, text='  '),

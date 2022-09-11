@@ -83,6 +83,9 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     #LogOut
     ([mod], "x", lazy.spawn('nwg-bar')),
 
+    #Cpliboard
+    #([mod],"v", lazy.spawn('rofi -modi "clipboard:greenclip print" -show clipboard'))
+
     # ------------ Hardware Configs ------------
 
     # Volume
