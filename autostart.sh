@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# systray 
+# systray
 nm-applet &
 
 # systray battery icon
@@ -9,3 +9,6 @@ cbatticon -u 5 &
 #volumeicon &
 
 nitrogen --restore &
+
+sudo paccache -r &
+sudo pacman -Sc
