@@ -14,10 +14,11 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     # ------------ Window Configs ------------
 
     # Switch between windows in current stack pane
-    ([mod], "Down", lazy.layout.down()),
-    ([mod], "Up", lazy.layout.up()),
-    ([mod], "Left", lazy.layout.left()),
-    ([mod], "Right", lazy.layout.right()),
+    ([mod], "j", lazy.layout.down()),
+    ([mod], "k", lazy.layout.up()),
+    ([mod], "h", lazy.layout.left()),
+    ([mod], "l", lazy.layout.right()),
+    ([mod], "space",  lazy.layout.next()),
 
     # Change window sizes (MonadTall)
     ([mod, "shift"], "Right", lazy.layout.grow()),
@@ -37,6 +38,11 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     # Kill window
     ([mod], "w", lazy.window.kill()),
     ([mod], "Escape", lazy.spawn('xkill')),
+    ([mod, "shift"], "space", lazy.layout.flip()),
+    ([mod, "shift"],
+        "a",
+        lazy.spawncmd(),
+    ),
 
     # Switch focus of monitors
     ([mod], "period", lazy.next_screen()),
@@ -46,7 +52,7 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod, "control"], "r", lazy.restart()),
 
     ([mod, "control"], "q", lazy.shutdown()),
-    ([mod], "u", lazy.spawn()),
+    ([mod], "u", lazy.spawn('rofi -show combi')),
 
     # ------------ App Configs ------------
 
