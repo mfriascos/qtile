@@ -6,9 +6,11 @@
 
 from libqtile.config import Key
 from libqtile.command import lazy
+import os, subprocess
 
 
 mod = "mod4"
+home = os.path.expanduser('~')
 
 keys = [Key(key[0], key[1], *key[2:]) for key in [
     # ------------ Window Configs ------------
@@ -42,6 +44,10 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod, "shift"],
         "a",
         lazy.spawncmd(),
+    ),
+    ([mod], 
+	    "n", 
+	    lazy.layout.normalize(),
     ),
 
     # Switch focus of monitors
@@ -88,6 +94,11 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
 
     #LogOut
     ([mod], "x", lazy.spawn('nwg-bar')),
+    ([mod,
+        "shift"], 
+	    "q", 
+	    lazy.spawn(home + '/.config/qtile/shutdown.sh'),
+	),
 
     #Cpliboard
     #([mod],"v", lazy.spawn('rofi -modi "clipboard:greenclip print" -show clipboard'))
